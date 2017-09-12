@@ -35,19 +35,8 @@ function initMap() {
         if (marker) {
             // Marker already created - Move it
             marker.setPosition(newPoint);
-            $.ajax({
-                type: "POST",
-                url: "{{ route('destinations.store') }}",
-                cache: false,
-                headers: {
-                    'X-CSRF-Token': '{{ csrf_token() }}'
-                },
-                data: {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
-                },
-                success: function() {}
-            });
+
+            // ajax store request
         }
         else {
         // Marker does not exist - Create it
