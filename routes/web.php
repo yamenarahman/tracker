@@ -20,4 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['web','auth']], function () {
     Route::resource('destinations', 'DestinationController');
+    Route::resource('messages', 'MessageController');
 });

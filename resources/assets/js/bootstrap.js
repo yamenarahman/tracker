@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -18,6 +17,13 @@ try {
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
+
+// window.NProgress = require('nprogress'); // progress bar
+import Turbolinks from 'turbolinks';
+Turbolinks.start();
+Turbolinks.BrowserAdapter.prototype.showProgressBarAfterDelay = function() {
+    return this.progressBarTimeout = setTimeout(this.showProgressBar, 50);
+};
 
 window.axios = require('axios');
 

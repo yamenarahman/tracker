@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 </head>
 <body>
     <div id="app">
@@ -29,14 +30,16 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/destinations') }}">Trips</a></li>
+                        <li><a href="{{ url('/messanger') }}">Messages</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -71,12 +74,16 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container" id="pjax-container">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCz1s7xqwM6CsqESjN3hQNwLbiB017vOcI&callback=initMap" async defer></script>
+    <script src="https://maps.google.com/maps/api/js?key=YOUR_KEYcallback=app.initMap" async defer></script>
+    {{--  <script src="{{ asset('js/jquery.pjax.js') }}"></script>  --}}
     @stack('js')
+    <script src="js/map.js"></script>
 </body>
 </html>
