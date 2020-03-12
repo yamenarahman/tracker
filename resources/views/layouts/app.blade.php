@@ -81,7 +81,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://maps.google.com/maps/api/js?key=YOUR_KEYcallback=app.initMap" async defer></script>
+    <script src="https://maps.google.com/maps/api/js?key=YOUR_KEY&callback=app.initMap" async defer></script>
     {{--  <script src="{{ asset('js/jquery.pjax.js') }}"></script>  --}}
     @stack('js')
     <script src="js/map.js"></script>
