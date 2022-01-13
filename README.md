@@ -18,4 +18,4 @@ This is an example of using google maps tracking in a laravel app.
 
 > ## Now once you are registered, you will see your place on the map and it will track you in real time.
 
-## To go further, you may make events or actions to post your langitude and latitude to a database.
+## To go further, you may make events or actions to post your longitude and latitude to a database.
